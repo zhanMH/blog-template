@@ -17,7 +17,7 @@ export default {
 </script>
 <style lang="scss">
 body {
-  min-width: 1440px;
+  min-width: 980px;
   width: 100%;
   background: url("./assets/images/plaid2dbf8.jpg");
 }

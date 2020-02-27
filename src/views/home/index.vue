@@ -1,9 +1,25 @@
 <template>
   <div class="home">
-    <div
-      class="banner"
-      :style="'background-image: url(' + bannerSrc + ')'"
-    ></div>
+    <div class="banner" :style="'background-image: url(' + bannerSrc + ')'">
+      <div class="title">
+        HI.CHUJIU!
+      </div>
+      <div class="info">
+        <div class="motto">
+          We are all in gutter，but some of us are looking at the stars。
+        </div>
+        <div class="social">
+          <a
+            href=""
+            class="iconfont"
+            :class="item.icon"
+            :style="'color:' + item.color"
+            v-for="(item, index) in socialLists"
+            :key="index"
+          ></a>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="list">
         <a
@@ -35,7 +51,7 @@
 
 <script>
 import publicFooter from "@/components/publicFooter.vue";
-
+import bannerSec from "@/assets/images/banner.jpeg";
 export default {
   name: "Home",
   components: {
@@ -43,8 +59,45 @@ export default {
   },
   data() {
     return {
-      bannerSrc:
-        "https://cdn.jsdelivr.net/gh/moezx/cdn@3.6.8/cover/webp/AK-01.jpg.webp",
+      bannerSrc: bannerSec,
+      socialLists: [
+        {
+          icon: "iconwechat",
+          link: "wechat",
+          name: "微信",
+          color: "#71bf4b"
+        },
+        {
+          icon: "iconweibo",
+          link: "weibo",
+          name: "微博",
+          color: "#c3352f"
+        },
+        {
+          icon: "iconqq",
+          link: "QQ",
+          name: "QQ",
+          color: "#65aee4"
+        },
+        {
+          icon: "icongithub",
+          link: "github",
+          name: "github",
+          color: "#67b685"
+        },
+        {
+          icon: "iconpixiv",
+          link: "pixiv",
+          name: "pixiv",
+          color: "#2f74a6"
+        },
+        {
+          icon: "iconalipay",
+          link: "alipay",
+          name: "支付宝",
+          color: "#439fe3"
+        }
+      ],
       lists: [
         {
           id: 1,
@@ -103,10 +156,54 @@ export default {
 </script>
 <style lang="scss" scope>
 .banner {
-  background: no-repeat fixed center;
+  position: relative;
+  background: rgba(0, 0, 0, 0.2) no-repeat fixed center;
   background-size: cover;
   height: 100vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/images/dot.png");
+  }
+  .title {
+    position: relative;
+    z-index: 10;
+    font-size: 86px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 40px;
+  }
+  .info {
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+    .motto {
+      font-size: 26px;
+      color: #ffffff;
+      margin-top: 10px;
+    }
+    .social {
+      justify-content: space-between;
+      padding: 0 20px;
+      display: flex;
+      .iconfont {
+        font-size: 32px;
+        margin: 10px;
+      }
+    }
+  }
 }
 .container {
   width: 800px;
