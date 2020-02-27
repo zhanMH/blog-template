@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <div class="banner" :style="'background-image: url(' + bannerSrc + ')'">
+    <div
+      class="banner"
+      :style="'background-image: url(' + bannerSrc + ')'"
+      ref="banner"
+    >
       <div class="title">
         HI.CHUJIU!
       </div>
@@ -10,8 +14,10 @@
         </div>
         <div class="social">
           <a
-            href=""
             class="iconfont"
+            target="_blank"
+            :title="item.name"
+            :href="item.link"
             :class="item.icon"
             :style="'color:' + item.color"
             v-for="(item, index) in socialLists"
@@ -19,8 +25,9 @@
           ></a>
         </div>
       </div>
+      <div class="iconfont iconxiala down" @click="downMain()"></div>
     </div>
-    <div class="container">
+    <div class="container" ref="container">
       <div class="list">
         <a
           class="line"
@@ -99,13 +106,13 @@ export default {
         },
         {
           icon: "iconbilibili",
-          link: "bilibili",
+          link: "https://space.bilibili.com/14167164",
           name: "B站",
           color: "#439fe3"
         },
         {
           icon: "iconwangyiyun",
-          link: "wangyiyun",
+          link: "https://music.163.com/#/user/home?id=61199609",
           name: "网易云音乐",
           color: "#c73420"
         }
@@ -163,6 +170,24 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    //滚动到主体
+    downMain() {
+      let containerTop = this.$refs.container.offsetTop;
+      this.roll(containerTop);
+    },
+    roll(v){
+      let time = setInterval(() => {
+        document.documentElement.scrollTop += 15;
+        if (document.documentElement.scrollTop >= v) {
+          clearTimeout(time);
+        }
+      }, 5);
+    },
+  },
+  mounted() {
+    console.log(1);
   }
 };
 </script>
@@ -215,6 +240,16 @@ export default {
         margin: 10px;
       }
     }
+  }
+  .down {
+    position: absolute;
+    bottom: 30px;
+    margin: 0px auto;
+    color: #ffffff;
+    font-size: 40px;
+    z-index: 10;
+    animation: float 1s linear infinite;
+    cursor: pointer;
   }
 }
 .container {
@@ -288,6 +323,19 @@ export default {
       flex-direction: row-reverse;
       text-align: right;
     }
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px)
+  }
+
+  100% {
+    transform: translateY(0)
   }
 }
 </style>

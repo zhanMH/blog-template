@@ -1,6 +1,8 @@
 <template>
   <div class="header">
-    <div class="logo">logo</div>
+    <div class="logo">
+      <img src="../assets/images/logo.png" alt="">
+    </div>
     <div class="menu-box">
       <div class="menuList">
         <div class="line" v-for="(item, index) in menuLists" :key="index">
@@ -62,14 +64,39 @@ export default {
   align-items: center;
   height: 70px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.692);
+  background: rgba(255, 255, 255, 0.75);
+  transition: all 0.6s;
   .logo {
     width: 200px;
     height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    img {
+      width: 50%;
+    }
   }
   .menuList {
-    flex: 1;
+    flex: none;
     display: flex;
+    .line {
+      width: 100px;
+      height: 70px;
+      line-height: 70px;
+      text-align: center;
+      color: #666;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .line:hover {
+      color: #FE9600;
+    }
   }
+  .headerUser {
+    padding-right: 40px;
+  }
+}
+.header:hover {
+  background: rgba(255, 255, 255, 0.99);
 }
 </style>
