@@ -62,40 +62,52 @@ export default {
       bannerSrc: bannerSec,
       socialLists: [
         {
-          icon: "iconwechat",
+          icon: "iconwechat-fill",
           link: "wechat",
           name: "微信",
           color: "#71bf4b"
         },
         {
-          icon: "iconweibo",
+          icon: "iconweibo1",
           link: "weibo",
           name: "微博",
           color: "#c3352f"
         },
         {
-          icon: "iconqq",
+          icon: "iconQQ",
           link: "QQ",
           name: "QQ",
           color: "#65aee4"
         },
         {
-          icon: "icongithub",
+          icon: "icongithub-fill",
           link: "github",
           name: "github",
           color: "#67b685"
         },
         {
-          icon: "iconpixiv",
-          link: "pixiv",
-          name: "pixiv",
+          icon: "iconzhihu",
+          link: "zhihu",
+          name: "知乎",
           color: "#2f74a6"
         },
         {
-          icon: "iconalipay",
+          icon: "iconalipay1",
           link: "alipay",
           name: "支付宝",
           color: "#439fe3"
+        },
+        {
+          icon: "iconbilibili",
+          link: "bilibili",
+          name: "B站",
+          color: "#439fe3"
+        },
+        {
+          icon: "iconwangyiyun",
+          link: "wangyiyun",
+          name: "网易云音乐",
+          color: "#c73420"
         }
       ],
       lists: [

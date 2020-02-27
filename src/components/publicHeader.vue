@@ -62,7 +62,7 @@ export default {
   align-items: center;
   height: 70px;
   overflow: hidden;
-  background: rgba(74, 66, 75, 0.692);
+  background: rgba(255, 255, 255, 0.692);
   .logo {
     width: 200px;
     height: 60px;
