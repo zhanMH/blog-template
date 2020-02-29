@@ -177,14 +177,14 @@ export default {
       let containerTop = this.$refs.container.offsetTop;
       this.roll(containerTop);
     },
-    roll(v){
+    roll(v) {
       let time = setInterval(() => {
         document.documentElement.scrollTop += 15;
         if (document.documentElement.scrollTop >= v) {
           clearTimeout(time);
         }
       }, 5);
-    },
+    }
   },
   mounted() {
     console.log(1);
@@ -331,11 +331,11 @@ export default {
   }
 
   50% {
-    transform: translateY(-6px)
+    transform: translateY(-6px);
   }
 
   100% {
-    transform: translateY(0)
+    transform: translateY(0);
   }
 }
 </style>
