@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">
-      <img src="../assets/images/logo.png" alt="">
+      <img src="../assets/images/logo.png" alt="" />
     </div>
     <div class="menu-box">
       <div class="menuList">
@@ -11,7 +11,9 @@
       </div>
     </div>
     <div class="headerUser">
-      欢迎您
+      <div class="userPic">
+        <div class="iconfont iconyonghu"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -94,6 +96,12 @@ export default {
   }
   .headerUser {
     padding-right: 40px;
+    .userPic {
+      color: #666;
+      .iconfont {
+        font-size: 36px;
+      }
+    }
   }
 }
 .header:hover {
