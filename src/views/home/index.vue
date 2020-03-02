@@ -186,24 +186,15 @@ export default {
       }
       this.roll(containerTop);
     },
-<<<<<<< HEAD
     //元素位置
-    roll(v){
-=======
     roll(v) {
->>>>>>> a4be32c6eadab74041a1b87a988af975c96ff87a
       let time = setInterval(() => {
         document.documentElement.scrollTop += v / 50;
         if (document.documentElement.scrollTop >= v) {
           clearTimeout(time);
         }
-<<<<<<< HEAD
       }, 7);
-    },
-=======
-      }, 5);
     }
->>>>>>> a4be32c6eadab74041a1b87a988af975c96ff87a
   },
   mounted() {
     console.log(1);
