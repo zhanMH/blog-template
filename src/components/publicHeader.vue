@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="headerUser">
-      <div class="userPic">
+      <div class="userPic" @click="userPicClick">
         <div class="iconfont iconyonghu"></div>
       </div>
     </div>
@@ -49,6 +49,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    userPicClick() {
+      this.$router.push("login");
+    }
   }
 };
 </script>
@@ -91,7 +96,7 @@ export default {
       cursor: pointer;
     }
     .line:hover {
-      color: #FE9600;
+      color: #fe9600;
     }
   }
   .headerUser {

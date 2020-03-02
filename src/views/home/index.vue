@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <public-header></public-header>
     <div
       class="banner"
       :style="'background-image: url(' + bannerSrc + ')'"
@@ -58,11 +59,13 @@
 
 <script>
 import publicFooter from "@/components/publicFooter.vue";
+import publicHeader from "@/components/publicHeader.vue";
 import bannerSec from "@/assets/images/banner.jpeg";
 export default {
   name: "Home",
   components: {
-    publicFooter
+    publicFooter,
+    publicHeader
   },
   data() {
     return {
@@ -201,7 +204,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .banner {
   position: relative;
   background: rgba(0, 0, 0, 0.2) no-repeat fixed center;
@@ -280,7 +283,7 @@ export default {
       background: rgba($color: #ffffff, $alpha: 0.7);
       margin-bottom: 40px;
       box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.3);
-      transition: all 0.35s;
+      transition: all 1s;
       .info {
         padding: 20px;
         .title {
@@ -319,7 +322,7 @@ export default {
           width: 100%;
           object-fit: cover;
           pointer-events: none;
-          transition: all 0.6s;
+          transition: all 1s;
         }
       }
       &:hover {
