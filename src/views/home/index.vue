@@ -174,16 +174,26 @@ export default {
   methods: {
     //滚动到主体
     downMain() {
+      //元素距离头部位置
       let containerTop = this.$refs.container.offsetTop;
+      //元素的高度
+      let containerHeight = this.$refs.container.scrollHeight;
+      //窗口高度
+      let documentHeight = document.documentElement.scrollHeight;
+      // 元素太短了全部滚出来就够了
+      if (containerHeight < documentHeight) {
+        containerTop = containerHeight - containerTop / 50;
+      }
       this.roll(containerTop);
     },
+    //元素位置
     roll(v){
       let time = setInterval(() => {
-        document.documentElement.scrollTop += 15;
+        document.documentElement.scrollTop += v / 50;
         if (document.documentElement.scrollTop >= v) {
           clearTimeout(time);
         }
-      }, 5);
+      }, 7);
     },
   },
   mounted() {
