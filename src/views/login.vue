@@ -21,7 +21,11 @@
             placeholder="请输入用户名"
           />
         </div>
-        <Button type="success" long>登录</Button>
+        <div class="line">
+          <a href="">注册账号</a>
+          <a href="">忘记密码</a>
+        </div>
+        <Button type="success" long> 登录 </Button>
       </div>
       <public-footer></public-footer>
     </div>
@@ -60,17 +64,20 @@ export default {
     align-items: center;
     flex-direction: column;
     border-radius: 30px;
-    width: 800px;
-    height: 700px;
+    width: 720px;
+    height: 620px;
+    padding: 40px;
     overflow: hidden;
     background: rgba($color: #ffffff, $alpha: 0.5);
     .main {
       display: flex;
+      flex: 1;
       align-items: center;
-      justify-content: space-around;
       flex-direction: column;
       width: 300px;
       .line {
+        display: flex;
+        justify-content: space-between;
         width: 100%;
         margin-bottom: 20px;
       }
