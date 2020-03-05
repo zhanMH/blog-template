@@ -33,7 +33,7 @@
         <a
           class="line"
           :class="[{ mark: index % 2 == 1 }]"
-          :href="item.link"
+          @click="goBlogDetails()"
           v-for="(item, index) in lists"
           :key="index"
         >
@@ -197,6 +197,9 @@ export default {
           clearTimeout(time);
         }
       }, 7);
+    },
+    goBlogDetails(){
+      this.$router.push("blog/details")
     }
   },
   mounted() {

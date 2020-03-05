@@ -21,6 +21,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .footer {
+  margin-top: 40px;
   .copyright {
     text-align: center;
   }
