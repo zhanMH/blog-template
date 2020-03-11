@@ -11,7 +11,14 @@
           <Input
             v-model="userData.userName"
             size="large"
-            placeholder="请输入用户名或手机号"
+            placeholder="请输入用户名"
+          />
+        </div>
+        <div class="line">
+          <Input
+            v-model="userData.phone"
+            size="large"
+            placeholder="手机号"
           />
         </div>
         <div class="line">
@@ -19,14 +26,13 @@
             v-model="userData.password"
             type="password"
             size="large"
-            placeholder="请输入密码"
+            placeholder="请输入用户名"
           />
         </div>
         <div class="line">
-          <router-link to="/register">注册账号</router-link>
-          <a href="">忘记密码</a>
+          <router-link to="/login">登录账号</router-link>
         </div>
-        <Button type="success" long> 登录 </Button>
+        <Button type="success" long @click="submit"> 注册 </Button>
       </div>
       <public-footer></public-footer>
     </div>
@@ -44,11 +50,17 @@ export default {
     return {
       userData: {
         userName: "",
-        password: ""
+        password: "",
+        phone:""
       }
     };
   },
-  methods: {},
+  methods: {
+    async submit(){
+      let resData= await this.$ajax.post('user/register',this.userData)
+      console.log(resData)
+    }
+  },
   mounted() {}
 };
 </script>

@@ -5,6 +5,7 @@ import store from "./store";
 import "./assets/style/resrt.css";
 import "./assets/style/iconfont.css";
 import "./plugins/iview.js";
+import "./plugins/axios.js";
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 
