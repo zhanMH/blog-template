@@ -10,14 +10,12 @@
         <div class="line">
           <Input
             v-model="userData.userName"
-            size="large"
             placeholder="请输入用户名"
           />
         </div>
         <div class="line">
           <Input
             v-model="userData.phone"
-            size="large"
             placeholder="手机号"
           />
         </div>
@@ -25,8 +23,7 @@
           <Input
             v-model="userData.password"
             type="password"
-            size="large"
-            placeholder="请输入用户名"
+            placeholder="请输入用密码"
           />
         </div>
         <div class="line">
@@ -58,7 +55,12 @@ export default {
   methods: {
     async submit(){
       let resData= await this.$ajax.post('user/register',this.userData)
-      console.log(resData)
+      if(!resData.errno){
+        this.$Message.success('注册成功');
+        this.$router.push({name:"login"})
+        return
+      }
+      this.$Message.error(resData.message);
     }
   },
   mounted() {}
